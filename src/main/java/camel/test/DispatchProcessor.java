@@ -13,7 +13,8 @@ public class DispatchProcessor implements Processor {
 	private static Properties workflowProperties;
 	
 	static {
-		workflowProperties = PropertyLoader.loadProperties("workflow.properties", null); 
+		//workflowProperties = PropertyLoader.loadProperties("workflow.properties", null); 
+		workflowProperties = PropertyLoader.loadProperties("workflow.properties");
 	}
 	
 	private String getNextStep (Exchange e, String result) {
