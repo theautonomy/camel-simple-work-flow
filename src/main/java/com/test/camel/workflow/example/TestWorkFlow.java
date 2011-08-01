@@ -1,10 +1,15 @@
-package camel.test;
+package com.test.camel.workflow.example;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.impl.SimpleRegistry;
+
+import com.test.camel.workflow.DispatchProcessor;
+import com.test.camel.workflow.EndWorkFlowProcessor;
+import com.test.camel.workflow.ErrorHandingProcessor;
+import com.test.camel.workflow.StartWorkFlowProcessor;
 
 public class TestWorkFlow {
 

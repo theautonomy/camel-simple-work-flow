@@ -1,4 +1,4 @@
-package camel.test;
+package com.test.camel.workflow;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

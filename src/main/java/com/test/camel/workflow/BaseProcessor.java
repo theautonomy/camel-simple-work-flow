@@ -1,4 +1,4 @@
-package camel.test;
+package com.test.camel.workflow;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -15,5 +15,6 @@ public abstract class BaseProcessor implements Processor {
 		wkc.setCurrentStep(step);
 		wkc.setResult(result);
 		e.getOut().setHeader("context", wkc); 
+		e.getOut().setBody(e.getIn().getBody());
 	}
 }

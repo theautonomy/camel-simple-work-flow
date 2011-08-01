@@ -1,10 +1,14 @@
-package camel.test;
+package com.test.camel.workflow.util;
 
 import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
+
+
+// This class is borrowed from http://www.javaworld.com/javaworld/javaqa/2003-08/01-qa-0808-property.html?page=1
+// Author: Vladimir Roubtsov
 
 public abstract class PropertyLoader {
 	

@@ -1,4 +1,4 @@
-package camel.test;
+package com.test.camel.workflow;
 
 public class WorkFlowContext {
 	
