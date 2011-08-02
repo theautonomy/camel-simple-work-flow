@@ -1,5 +1,7 @@
 package com.test.camel.workflow.example;
 
+import java.util.Properties;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
@@ -10,16 +12,19 @@ import com.test.camel.workflow.DispatchProcessor;
 import com.test.camel.workflow.EndWorkFlowProcessor;
 import com.test.camel.workflow.ErrorHandingProcessor;
 import com.test.camel.workflow.StartWorkFlowProcessor;
+import com.test.camel.workflow.util.PropertyLoader;
 
 public class TestWorkFlow {
 
-	public static void main(String[] args) throws Throwable {
-		test(null);
-	}
-	
-    public static void test(String [] args) throws Throwable {
+    public static void main(String [] args) throws Throwable {
+    
+    	Properties workflowProperties;
+    	workflowProperties = PropertyLoader.loadProperties("workflow.properties");
     	
     	SimpleRegistry sr = new SimpleRegistry();
+    	DispatchProcessor dispacther = new DispatchProcessor();
+    	dispacther.setWorkflowProperties(workflowProperties);
+    	sr.put("dispatcher", dispacther);
     	
         //CamelContext context = new DefaultCamelContext();
         CamelContext context = new DefaultCamelContext(sr);
@@ -43,7 +48,7 @@ public class TestWorkFlow {
             public void configure() throws Exception {
             	
                  from("direct:routing")
-                .process(new DispatchProcessor());
+                .to("bean:dispatcher");
              
                  from("direct:error")
                 .process(new ErrorHandingProcessor());

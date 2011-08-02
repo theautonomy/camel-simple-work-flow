@@ -12,13 +12,23 @@ import com.test.camel.workflow.util.PropertyLoader;
 
 public class DispatchProcessor implements Processor {
 	
-	private static Properties workflowProperties;
+	private Properties workflowProperties;
 	
+	/*
 	static {
 		//workflowProperties = PropertyLoader.loadProperties("workflow.properties", null); 
 		workflowProperties = PropertyLoader.loadProperties("workflow.properties");
 	}
+	*/
 	
+	public Properties getWorkflowProperties() {
+		return workflowProperties;
+	}
+
+	public void setWorkflowProperties(Properties workflowProperties) {
+		this.workflowProperties = workflowProperties;
+	}
+
 	private String getNextStep (Exchange e, String result) {
 		WorkFlowContext wkc = (WorkFlowContext)e.getIn().getHeader("context");
 		String currentStep = wkc.getCurrentStep();
