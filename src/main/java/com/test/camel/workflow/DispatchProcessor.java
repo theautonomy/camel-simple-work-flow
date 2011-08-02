@@ -9,17 +9,9 @@ import org.apache.camel.Processor;
 
 import com.test.camel.workflow.util.PropertyLoader;
 
-
 public class DispatchProcessor implements Processor {
 	
 	private Properties workflowProperties;
-	
-	/*
-	static {
-		//workflowProperties = PropertyLoader.loadProperties("workflow.properties", null); 
-		workflowProperties = PropertyLoader.loadProperties("workflow.properties");
-	}
-	*/
 	
 	public Properties getWorkflowProperties() {
 		return workflowProperties;
