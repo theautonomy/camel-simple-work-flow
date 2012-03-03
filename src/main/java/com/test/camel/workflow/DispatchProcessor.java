@@ -7,8 +7,6 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
 
-import com.test.camel.workflow.util.PropertyLoader;
-
 public class DispatchProcessor implements Processor {
 	
 	private Properties workflowProperties;

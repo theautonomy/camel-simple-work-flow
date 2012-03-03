@@ -1,7 +1,6 @@
 package com.test.camel.workflow.example;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 
 import com.test.camel.workflow.BaseProcessor;
 

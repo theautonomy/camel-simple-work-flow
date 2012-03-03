@@ -6,11 +6,17 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
-
 // This class is borrowed from http://www.javaworld.com/javaworld/javaqa/2003-08/01-qa-0808-property.html?page=1
 // Author: Vladimir Roubtsov
 
-public abstract class PropertyLoader {
+public class PropertyLoader {
+	
+	private static final boolean THROW_ON_LOAD_FAILURE = true;
+	private static final boolean LOAD_AS_RESOURCE_BUNDLE = false;
+	private static final String SUFFIX = ".properties";
+	private PropertyLoader() {
+		
+	}
 	
 	public static Properties loadProperties(String name, ClassLoader loader) {
 		if (name == null)
@@ -37,7 +43,7 @@ public abstract class PropertyLoader {
 						Locale.getDefault(), loader);
 
 				result = new Properties();
-				for (Enumeration keys = rb.getKeys(); keys.hasMoreElements();) {
+				for (Enumeration<String> keys = rb.getKeys(); keys.hasMoreElements();) {
 					final String key = (String) keys.nextElement();
 					final String value = rb.getString(key);
 
@@ -78,17 +84,9 @@ public abstract class PropertyLoader {
 		return result;
 	}
 
-
 	public static Properties loadProperties(final String name) {
 		return loadProperties(name, Thread.currentThread()
 				.getContextClassLoader());
 	}
-
-	private PropertyLoader() {
-	}
-
-	private static final boolean THROW_ON_LOAD_FAILURE = true;
-	private static final boolean LOAD_AS_RESOURCE_BUNDLE = false;
-	private static final String SUFFIX = ".properties";
 
 } 
