@@ -17,4 +17,5 @@ public abstract class BaseProcessor implements Processor {
 		e.getOut().setHeader("context", wkc); 
 		e.getOut().setBody(e.getIn().getBody());
 	}
+	
 }
