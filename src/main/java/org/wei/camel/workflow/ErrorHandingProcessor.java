@@ -6,7 +6,7 @@ import org.apache.camel.Processor;
 public class ErrorHandingProcessor implements Processor {
 
 	public void process(Exchange arg0) throws Exception {
-		System.out.println("something is wrong");
+		System.out.println("In error handler");
 
 	}
 

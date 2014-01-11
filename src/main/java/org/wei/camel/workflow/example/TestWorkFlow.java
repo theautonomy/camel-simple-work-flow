@@ -60,12 +60,18 @@ public class TestWorkFlow {
 				;
 
 				from("direct:step1")
-				.process(new Step1Processor())
-				.to("direct:routing");
+				.doTry()
+					.process(new Step1Processor())
+					.to("direct:routing")
+				.doCatch(Exception.class)
+				.to("direct:error");
 
 				from("direct:step2")
-				.process(new Step2Processor())
-				.to("direct:routing");
+				.doTry()
+					.process(new Step2Processor())
+					.to("direct:routing")
+				.doCatch(Exception.class)
+					.to("direct:error");
 
 				from("direct:step3")
 				.process(new Step3Processor())

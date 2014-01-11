@@ -31,7 +31,8 @@ public class DispatchProcessor implements Processor {
 		Object p = new Object();
 		p = (Object)m.getBody();
 		System.out.println("in dispatcher name=" + p);
-		String result = "success";
+		WorkFlowContext wkc = (WorkFlowContext)e.getIn().getHeader("context");
+		String result = wkc.getResult();
 		String nextStep = getNextStep(e, result);
 		context.createProducerTemplate().send("direct:"+nextStep, e);
 	}
