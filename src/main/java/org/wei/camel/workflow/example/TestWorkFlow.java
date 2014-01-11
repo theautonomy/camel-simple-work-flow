@@ -1,4 +1,4 @@
-package com.test.camel.workflow.example;
+package org.wei.camel.workflow.example;
 
 import java.util.Properties;
 
@@ -7,12 +7,11 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.impl.SimpleRegistry;
-
-import com.test.camel.workflow.DispatchProcessor;
-import com.test.camel.workflow.EndWorkFlowProcessor;
-import com.test.camel.workflow.ErrorHandingProcessor;
-import com.test.camel.workflow.StartWorkFlowProcessor;
-import com.test.camel.workflow.util.PropertyLoader;
+import org.wei.camel.workflow.DispatchProcessor;
+import org.wei.camel.workflow.EndWorkFlowProcessor;
+import org.wei.camel.workflow.ErrorHandingProcessor;
+import org.wei.camel.workflow.StartWorkFlowProcessor;
+import org.wei.camel.workflow.util.PropertyLoader;
 
 public class TestWorkFlow {
 

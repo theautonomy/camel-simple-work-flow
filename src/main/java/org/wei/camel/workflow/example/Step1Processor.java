@@ -1,8 +1,7 @@
-package com.test.camel.workflow.example;
+package org.wei.camel.workflow.example;
 
 import org.apache.camel.Exchange;
-
-import com.test.camel.workflow.BaseProcessor;
+import org.wei.camel.workflow.BaseProcessor;
 
 public class Step1Processor extends BaseProcessor { 
 

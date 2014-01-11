@@ -1,4 +1,4 @@
-package com.test.camel.workflow;
+package org.wei.camel.workflow;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;

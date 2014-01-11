@@ -1,4 +1,4 @@
-package com.test.camel.workflow.util;
+package org.wei.camel.workflow.util;
 
 import java.io.InputStream;
 import java.util.Enumeration;

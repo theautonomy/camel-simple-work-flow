@@ -1,4 +1,4 @@
-package com.test.camel.workflow;
+package org.wei.camel.workflow;
 
 import java.util.Properties;
 
