@@ -10,14 +10,15 @@ import java.util.ResourceBundle;
 // Author: Vladimir Roubtsov
 
 public class PropertyLoader {
-	
+
 	private static final boolean THROW_ON_LOAD_FAILURE = true;
 	private static final boolean LOAD_AS_RESOURCE_BUNDLE = false;
 	private static final String SUFFIX = ".properties";
-	private PropertyLoader() {
-		
+
+	private PropertyLoader() {
+
 	}
-	
+
 	public static Properties loadProperties(String name, ClassLoader loader) {
 		if (name == null)
 			throw new IllegalArgumentException("null input: name");
@@ -43,7 +44,8 @@ public class PropertyLoader {
 						Locale.getDefault(), loader);
 
 				result = new Properties();
-				for (Enumeration<String> keys = rb.getKeys(); keys.hasMoreElements();) {
+				for (Enumeration<String> keys = rb.getKeys(); keys
+						.hasMoreElements();) {
 					final String key = (String) keys.nextElement();
 					final String value = rb.getString(key);
 
@@ -89,4 +91,4 @@ public class PropertyLoader {
 				.getContextClassLoader());
 	}
 
-} 
+}
